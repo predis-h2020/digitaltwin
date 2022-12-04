@@ -130,3 +130,6 @@ dmypy.json
 
 # local conda env
 /conda-env
+
+# local directory after package installation
+/.idea
