@@ -1,0 +1,20 @@
+name: digitaltwin
+channels:
+  - conda-forge                     # third party stuff
+  - defaults
+dependencies:
+  - python=3.9.7
+  - matplotlib
+  - mamba
+  - scipy
+  - doit
+  - numpy
+  - pandas
+  - pyyaml
+  - conda-ecosystem-user-package-isolation
+  - pytest
+  - pip
+  - black
+  - tectonic=0.8
+  - pip:
+    - -e .
