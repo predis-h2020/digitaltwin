@@ -15,6 +15,7 @@ dependencies:
   - pytest
   - pip
   - black
-  - tectonic=0.8
+  - tectonic
+  - openpyxl
   - pip:
     - -e .

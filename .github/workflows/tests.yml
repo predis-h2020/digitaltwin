@@ -34,3 +34,9 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/tests/
           pytest
+
+      - name: create-virtual-sensor-data
+        shell: bash -l {0}
+        run: |
+          cd $GITHUB_WORKSPACE/examples/virtual_data_generation
+          doit
