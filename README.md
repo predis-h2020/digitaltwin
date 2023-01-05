@@ -11,7 +11,7 @@ In addition, there is an example folder that shows how the functionality provide
 ```
 conda env create --prefix ./conda-env -f environment.yml 
 ```
-You could also use mamba (which is usually much faster) . 
+You could also use mamba (which is usually much faster).
 
 * Activate the environment
 ```
@@ -24,10 +24,9 @@ pytest
 ```
 * or call a workflow in the examples section
 ```
-cd examples/virtual:data_generation
+cd examples/virtual_data_generation
 doit
 ```
-
 
 ## Reporting bugs
 
@@ -42,6 +41,4 @@ The [Fork & Pull Request Workflow](https://docs.github.com/en/get-started/quicks
 1. Fork this repository
 2. Clone the repository at your machine
 3. Add your changes in a branch named after what's being done (`lower-case-with-hyphens`)
-4. Make a pull request to ` predis-h2020/digitaltwin`, targeting the `main` branch
-
-
+4. Make a pull request to `predis-h2020/digitaltwin`, targeting the `main` branch

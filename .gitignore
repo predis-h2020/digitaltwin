@@ -133,3 +133,6 @@ dmypy.json
 
 # local directory after package installation
 /.idea
+
+# doit
+*.doit.db*

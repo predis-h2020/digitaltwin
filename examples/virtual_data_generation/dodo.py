@@ -105,7 +105,7 @@ def task_create_virtual_displacement_sensor():
                 [],
                 {
                     "metadata": {
-                        "measuring quantity": "displacements",
+                        "measuring quantity": "displacement",
                         "unit": "m",
                         "package": "test_package2",
                         "location": [0, 0, 0],
@@ -114,7 +114,7 @@ def task_create_virtual_displacement_sensor():
                     "raw_data": pd.DataFrame(
                         data={
                             "time": np.linspace(start=2, stop=10, num=20),
-                            "temperature": np.linspace(start=11.3, stop=12.5, num=20),
+                            "displacement": np.linspace(start=11.3, stop=12.5, num=20),
                         }
                     ),
                     "metadata_csv": metadata_csv,
