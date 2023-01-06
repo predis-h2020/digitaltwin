@@ -1,0 +1,32 @@
+[{
+    "sensor_id": "sensor-001",
+    "package_id": "package-001",
+    "position": {
+        "location": [0, 1, 0]
+    },
+    "measuring_quantity" :       {
+        "type": "temperature",
+        "unit": "K"
+      },
+    "independent_variable":       {
+        "type": "time",
+        "unit": "s"
+      }
+  },
+  {
+    "sensor_id": "sensor-002",
+    "package_id": "package-001",
+    "position": {
+        "location": [0, 2, 0],
+        "orientation": [1, 0, 0]
+    },
+    "measuring_quantity" :       {
+        "type": "displacement",
+        "unit": "m"
+      },
+    "independent_variable":       {
+        "type": "time",
+        "unit": "s"
+      }
+  }]
+  
