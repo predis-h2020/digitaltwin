@@ -1,0 +1,42 @@
+name: lebedigital
+on:
+  push:
+    branches-ignore:
+
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Runs the workflow once per day at 3:15am
+  schedule:
+    - cron: '3 15 * * *'
+
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+
+      - name: Install Conda environment from environment.yml
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          cache-env: true
+          environment-file: environment.yml
+          environment-name: digitaltwin
+
+      - name: run-pytest
+        shell: bash -l {0}
+        run: |
+          cd $GITHUB_WORKSPACE/tests/
+          pytest
+
+      - name: create-virtual-sensor-data
+        shell: bash -l {0}
+        run: |
+          cd $GITHUB_WORKSPACE/examples/virtual_data_generation
+          doit
