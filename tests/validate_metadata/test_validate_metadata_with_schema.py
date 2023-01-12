@@ -1,5 +1,6 @@
 import pytest
 import jsonschema
+import json
 
 def test_validate_metadata():
     # Define the data to validate
