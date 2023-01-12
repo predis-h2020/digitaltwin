@@ -51,34 +51,23 @@
                 "type": {
                     "type": "string",
                     "enum": [
-                        "temperature", "displacement", "radioactivity", "humidity"
+                        "temperature",
+                        "displacement",
+                        "radioactivity",
+                        "relative_humidity"
                     ]
                 },
                 "unit": {
                     "description": "SI unit.",
                     "type": "string"
-                }
-            }
-        },
-        "independent_variable": {
-            "description": "The chosen variable to make the measurements as a function of.",
-            "type": "object",
-            "required": [
-                "type",
-                "unit"
-            ],
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": [
-                        "time"
-                    ]
                 },
-                "unit": {
-                    "description": "SI unit.",
-                    "type": "string"
+                "values": {
+                    "description": "List of measured values",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
                 }
             }
         }
     }
-}
