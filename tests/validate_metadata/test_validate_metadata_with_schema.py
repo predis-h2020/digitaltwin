@@ -1,5 +1,5 @@
 import pytest
-from pytest_json_schema import assert_valid_schema
+import jsonschema
 
 def test_validate_metadata():
     # Define the data to validate
@@ -19,5 +19,7 @@ def test_validate_metadata():
       }
     }
 
-    with assert_valid_schema({'response': '/../../metadata/schemas/sensor.json'}):
-        response = metadata
+    schema = json.loads(open('/../../metadata/schemas/sensor.json').read())
+
+    with pytest.raises(jsonschema.exceptions.ValidationError):
+        jsonschema.validate(metadata, schema)
