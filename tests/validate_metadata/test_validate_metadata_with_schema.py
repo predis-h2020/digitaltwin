@@ -20,7 +20,6 @@ def test_validate_metadata():
       }
     }
 
-    schema = json.loads(open('/metadata/schemas/sensor.json').read())
+    schema = json.loads(open('metadata/schemas/sensor.json').read())
 
-    with pytest.raises(jsonschema.exceptions.ValidationError):
-        jsonschema.validate(metadata, schema)
+    jsonschema.validate(metadata, schema)

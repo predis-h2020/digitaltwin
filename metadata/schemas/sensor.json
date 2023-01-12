@@ -54,7 +54,7 @@
                         "temperature",
                         "displacement",
                         "radioactivity",
-                        "relative_humidity"
+                        "humidity"
                     ]
                 },
                 "unit": {
@@ -71,3 +71,4 @@
             }
         }
     }
+}
