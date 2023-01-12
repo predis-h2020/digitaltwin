@@ -14,6 +14,7 @@ dependencies:
   - conda-ecosystem-user-package-isolation
   - pytest
   - jsonschema
+  - pytest-json-schema
   - pip
   - black
   - tectonic
