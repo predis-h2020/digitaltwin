@@ -10,8 +10,8 @@ def test_validate_metadata():
         "location": [0, 1, 0]
     },
     "measuring_quantity" :       {
-        "type": "temperature"
-      #        "unit": "K"
+        "type": "temperature",
+        "unit": "K"
       },
     "independent_variable":       {
         "type": "time",
