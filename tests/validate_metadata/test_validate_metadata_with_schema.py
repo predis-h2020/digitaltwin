@@ -1,5 +1,6 @@
 import pytest
 import jsonschema
+import os
 import json
 
 def test_validate_metadata():
@@ -20,6 +21,10 @@ def test_validate_metadata():
       }
     }
 
-    schema = json.loads(open('metadata/schemas/sensor.json').read())
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+    schema_path = os.path.join(ROOT_DIR, 'metadata', 'schemas','sensor.json' ) 
+
+    schema = json.loads(open(schema_path).read())
 
     jsonschema.validate(metadata, schema)
