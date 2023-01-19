@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Waste Package Monitoring Sensor Metadata",
+    "description": "Metadata for a waste package monitoring sensor, including its unique identifier, position, and measurement capabilities.",
+    "type": "object",
+    "required": [
+        "sensor_id",
+        "position",
+        "measuring_quantity"
+    ],
+    "properties": {
+        "sensor_id": {
+            "description": "A unique identifier for the sensor.",
+            "type": "string"
+        },
+        "package_id": {
+            "description": "A unique identifier for the Waste Package where the sensor is placed.",
+            "type": "string"
+        },
+        "position": {
+            "description": "The position of the sensor defined by location and optional orientation.",
+            "type": "object",
+            "required": [
+                "location"
+            ],
+            "properties": {
+                "location": {
+                    "description": "The XYZ coordinates of the sensor.",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "orientation": {
+                    "description": "The XYZ coordinates of the orientation.",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "measuring_quantity": {
+            "description": "The type of measurement that the sensor is capable of taking.",
+            "type": "object",
+            "required": [
+                "type",
+                "unit"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "temperature",
+                        "displacement",
+                        "radioactivity",
+                        "relative_humidity"
+                    ]
+                },
+                "unit": {
+                    "description": "SI unit.",
+                    "type": "string"
+                },
+                "values": {
+                    "description": "List of measured values",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+}
