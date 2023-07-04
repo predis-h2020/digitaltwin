@@ -6,7 +6,9 @@ dependencies:
   - python=3.9.7
   - matplotlib
   - mamba
-  - scipy
+  - scipy<1.10 # higher versions not maintained in Bayem
+  - tabulate # used in bayem
+  - seaborn # For nicer plots
   - doit
   - numpy
   - pandas
@@ -19,4 +21,5 @@ dependencies:
   - tectonic
   - openpyxl
   - pip:
+    - "--editable=git+https://github.com/BAMresearch/bayem.git@master#egg=bayem"
     - -e .
