@@ -217,7 +217,7 @@ if return_jacobian:
     )
     cov = vb_results.param.cov
     cov_propagated = gaussian_error_propagator(
-        jac=diff, stds=post_std, cov=cov, rtol=1e-12, atol=1e-5
+        jac=diff, cov=cov, rtol=1e-12, atol=1e-5
     )
     # uncertainty of the identified noise
     cov_inv = vb_results.cov_inv[0]

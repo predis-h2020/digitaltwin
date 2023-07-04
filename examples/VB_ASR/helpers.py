@@ -195,7 +195,7 @@ def gaussian_error_propagator(jac, stds=None, cov=None, rtol=1e-12, atol=1e-6):
         if (stds is not None) and (
             cov is not None
         ):  # if both 'stds' 'cov' are given, we check them to agree.
-            e = np.linalg.norm(np.diag(cov) ** (0.5) - stds) / np.linalg.norm(stds)
+            e = np.linalg.norm(cov - np.diag(stds**2)) / np.linalg.norm(stds)
             if e > rtol:
                 raise ValueError(
                     f"The diagonal values of the 'cov' do not agree with the 'stds'."
