@@ -119,11 +119,19 @@ def me_scalar(X):
 # VARIATIONAL BAYESIAN (VB)
 ###############################
 
+### Prior parameters
 prior_mvn = MVN(mean=X0, precision=np.diag([(abs(x)) ** (-2) for x in X0]))
-n0 = Gamma(shape=1.5, scale=175000.0)
-# n0 = Gamma(shape=0.84, scale=15000.)
-# n0 = Gamma(shape=0.5, scale=500000.)
-# n0 = Gamma(shape=0.84, scale=370000.)
+
+### Prior noise
+## (1): from quantiles of expected standard deviation
+n0_std_min = 0.002
+n0_std_max = 0.02
+n0 = Gamma.FromSDQuantiles(n0_std_min, n0_std_max, (0.02, 0.98))
+## (2): from mean of expected standard deviation
+# n0_std_mean = 0.01
+# n0_prc = n0_std_mean ** (-2)
+# n0 = Gamma.FromMeanStd(n0_prc, n0_prc / 5.)
+
 vb_results = vba(f=me_vec, x0=prior_mvn, noise0=n0, jac=return_jacobian)
 
 ### Plot free energy
